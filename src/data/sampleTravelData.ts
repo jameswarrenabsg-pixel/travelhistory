@@ -11,7 +11,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'Japan',
     latitude: 35.6762,
     longitude: 139.6503,
-    notes: 'Cherry blossom season in Ueno Park'
+    notes: 'Cherry blossom season in Ueno Park',
   },
   {
     id: 'loc-2',
@@ -23,7 +23,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'Japan',
     latitude: 35.0116,
     longitude: 135.7681,
-    notes: 'Visited Fushimi Inari and Arashiyama Bamboo Grove'
+    notes: 'Visited Fushimi Inari and Arashiyama Bamboo Grove',
   },
   {
     id: 'loc-3',
@@ -35,7 +35,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'France',
     latitude: 48.8566,
     longitude: 2.3522,
-    notes: 'Bastille Day celebrations & Louvre Museum'
+    notes: 'Bastille Day celebrations & Louvre Museum',
   },
   {
     id: 'loc-4',
@@ -47,7 +47,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'France',
     latitude: 43.7102,
     longitude: 7.262,
-    notes: 'Promenade des Anglais & French Riviera'
+    notes: 'Promenade des Anglais & French Riviera',
   },
   {
     id: 'loc-5',
@@ -59,7 +59,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'Italy',
     latitude: 41.9028,
     longitude: 12.4964,
-    notes: 'Colosseum and Vatican City trip'
+    notes: 'Colosseum and Vatican City trip',
   },
   {
     id: 'loc-6',
@@ -71,7 +71,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'Italy',
     latitude: 43.7696,
     longitude: 11.2558,
-    notes: 'Uffizi Gallery & Tuscan countryside'
+    notes: 'Uffizi Gallery & Tuscan countryside',
   },
   {
     id: 'loc-7',
@@ -83,7 +83,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'United States',
     latitude: 40.7128,
     longitude: -74.006,
-    notes: 'Autumn in Central Park & Broadway shows'
+    notes: 'Autumn in Central Park & Broadway shows',
   },
   {
     id: 'loc-8',
@@ -95,7 +95,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'United States',
     latitude: 42.3601,
     longitude: -71.0589,
-    notes: 'Freedom Trail and winter harbour walk'
+    notes: 'Freedom Trail and winter harbour walk',
   },
   {
     id: 'loc-9',
@@ -107,7 +107,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'United Kingdom',
     latitude: 51.5074,
     longitude: -0.1278,
-    notes: 'West End shows & British Museum'
+    notes: 'West End shows & British Museum',
   },
   {
     id: 'loc-10',
@@ -119,7 +119,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'United Kingdom',
     latitude: 55.9533,
     longitude: -3.1883,
-    notes: 'Edinburgh Castle & Royal Mile'
+    notes: 'Edinburgh Castle & Royal Mile',
   },
   {
     id: 'loc-11',
@@ -131,7 +131,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'Australia',
     latitude: -33.8688,
     longitude: 151.2093,
-    notes: 'Opera House & Manly Beach'
+    notes: 'Opera House & Manly Beach',
   },
   {
     id: 'loc-12',
@@ -143,7 +143,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'Australia',
     latitude: -37.8136,
     longitude: 144.9631,
-    notes: 'Laneways coffee culture & Great Ocean Road'
+    notes: 'Laneways coffee culture & Great Ocean Road',
   },
   {
     id: 'loc-13',
@@ -155,7 +155,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'Spain',
     latitude: 41.3851,
     longitude: 2.1734,
-    notes: 'Sagrada Familia & Gothic Quarter'
+    notes: 'Sagrada Familia & Gothic Quarter',
   },
   {
     id: 'loc-14',
@@ -167,7 +167,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'South Korea',
     latitude: 37.5665,
     longitude: 126.978,
-    notes: 'Gyeongbokgung Palace & street food in Myeongdong'
+    notes: 'Gyeongbokgung Palace & street food in Myeongdong',
   },
   {
     id: 'loc-15',
@@ -179,7 +179,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'South Korea',
     latitude: 35.1796,
     longitude: 129.0756,
-    notes: 'Haeundae Beach & Gamcheon Culture Village'
+    notes: 'Haeundae Beach & Gamcheon Culture Village',
   },
   {
     id: 'loc-16',
@@ -191,7 +191,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'Canada',
     latitude: 49.2827,
     longitude: -123.1207,
-    notes: 'Stanley Park & Capilano Suspension Bridge'
+    notes: 'Stanley Park & Capilano Suspension Bridge',
   },
   {
     id: 'loc-17',
@@ -203,7 +203,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'Canada',
     latitude: 43.6532,
     longitude: -79.3832,
-    notes: 'CN Tower & trip to Niagara Falls'
+    notes: 'CN Tower & trip to Niagara Falls',
   },
   {
     id: 'loc-18',
@@ -215,7 +215,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'Germany',
     latitude: 52.52,
     longitude: 13.405,
-    notes: 'Christmas markets & Brandenburg Gate'
+    notes: 'Christmas markets & Brandenburg Gate',
   },
   {
     id: 'loc-19',
@@ -227,7 +227,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'Germany',
     latitude: 48.1351,
     longitude: 11.582,
-    notes: 'Marienplatz & Bavarian castles'
+    notes: 'Marienplatz & Bavarian castles',
   },
   {
     id: 'loc-20',
@@ -239,7 +239,7 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'Netherlands',
     latitude: 52.3676,
     longitude: 4.9041,
-    notes: 'Canal cruise & Keukenhof tulip gardens'
+    notes: 'Canal cruise & Keukenhof tulip gardens',
   },
   {
     id: 'loc-21',
@@ -251,6 +251,6 @@ export const sampleTravelLocations: TravelLocation[] = [
     country: 'Belgium',
     latitude: 50.8503,
     longitude: 4.3517,
-    notes: 'Grand Place & waffle tasting'
-  }
+    notes: 'Grand Place & waffle tasting',
+  },
 ];

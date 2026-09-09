@@ -7,15 +7,10 @@ interface TravelStatsProps {
   locations: TravelLocation[];
 }
 
-export const TravelStats: React.FC<TravelStatsProps> = ({
-  selectedYear,
-  locations,
-}) => {
+export const TravelStats: React.FC<TravelStatsProps> = ({ selectedYear, locations }) => {
   const uniqueCities = new Set(locations.map((loc) => loc.city)).size;
   const uniqueCountries = new Set(locations.map((loc) => loc.country)).size;
-  const uniqueStates = new Set(
-    locations.map((loc) => loc.countyState).filter(Boolean)
-  ).size;
+  const uniqueStates = new Set(locations.map((loc) => loc.countyState).filter(Boolean)).size;
 
   return (
     <div className="bg-white border-b border-slate-200 px-4 py-3 shadow-xs">
@@ -47,14 +42,18 @@ export const TravelStats: React.FC<TravelStatsProps> = ({
             <div className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg">
               <Navigation className="w-4 h-4 text-amber-500" />
               <span className="font-semibold text-slate-700">{uniqueStates}</span>
-              <span className="text-slate-500">{uniqueStates === 1 ? 'Region/State' : 'Regions/States'}</span>
+              <span className="text-slate-500">
+                {uniqueStates === 1 ? 'Region/State' : 'Regions/States'}
+              </span>
             </div>
           )}
 
           <div className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg">
             <Globe2 className="w-4 h-4 text-emerald-500" />
             <span className="font-semibold text-slate-700">{uniqueCountries}</span>
-            <span className="text-slate-500">{uniqueCountries === 1 ? 'Country' : 'Countries'}</span>
+            <span className="text-slate-500">
+              {uniqueCountries === 1 ? 'Country' : 'Countries'}
+            </span>
           </div>
         </div>
       </div>

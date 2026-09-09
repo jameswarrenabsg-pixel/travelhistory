@@ -13,9 +13,7 @@ export const MapBoundsAutoFitter = ({ locations }: MapBoundsAutoFitterProps) => 
   useEffect(() => {
     if (!map || locations.length === 0) return;
 
-    const validLocations = locations.filter(
-      (loc) => loc.latitude !== 0 || loc.longitude !== 0
-    );
+    const validLocations = locations.filter((loc) => loc.latitude !== 0 || loc.longitude !== 0);
 
     if (validLocations.length === 0) return;
 
@@ -25,9 +23,7 @@ export const MapBoundsAutoFitter = ({ locations }: MapBoundsAutoFitterProps) => 
         duration: 1.2,
       });
     } else {
-      const bounds = L.latLngBounds(
-        validLocations.map((loc) => [loc.latitude, loc.longitude])
-      );
+      const bounds = L.latLngBounds(validLocations.map((loc) => [loc.latitude, loc.longitude]));
       map.fitBounds(bounds, {
         padding: [50, 50],
         maxZoom: 12,

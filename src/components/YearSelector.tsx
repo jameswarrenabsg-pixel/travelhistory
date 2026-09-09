@@ -68,9 +68,7 @@ export const YearSelector: React.FC<YearSelectorProps> = ({
                 {count > 0 && (
                   <span
                     className={`ml-1 text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
-                      isSelected
-                        ? 'bg-sky-700/80 text-white'
-                        : 'bg-slate-800 text-slate-400'
+                      isSelected ? 'bg-sky-700/80 text-white' : 'bg-slate-800 text-slate-400'
                     }`}
                   >
                     {count}

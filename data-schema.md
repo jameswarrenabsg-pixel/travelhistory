@@ -4,16 +4,16 @@
 
 The application expects an Excel file (`.xlsx`, `.xls`) or a CSV file (`.csv`) with the following column structure:
 
-| Column Name    | Data Type | Required | Example           | Description                                        |
-| -------------- | --------- | -------- | ----------------- | -------------------------------------------------- |
-| `Year`         | Integer   | Yes      | `2024`            | Travel year (between 2016 and 2026)                |
-| `Date`         | String    | No       | `2024-05-15`      | Exact date or date range                           |
-| `Month`        | String    | No       | `May`             | Month of travel                                    |
-| `City`         | String    | Yes      | `Kyoto`           | City visited                                       |
-| `County_State` | String    | No       | `Kansai`          | County, Province, or State                         |
-| `Country`      | String    | Yes      | `Japan`           | Country name                                       |
-| `Latitude`     | Float     | Optional | `35.0116`         | Decimal latitude (-90.0 to 90.0)                   |
-| `Longitude`    | Float     | Optional | `135.7681`        | Decimal longitude (-180.0 to 180.0)                |
+| Column Name    | Data Type | Required | Example           | Description                                         |
+| -------------- | --------- | -------- | ----------------- | --------------------------------------------------- |
+| `Year`         | Integer   | Yes      | `2024`            | Travel year (between 2016 and 2026)                 |
+| `Date`         | String    | No       | `2024-05-15`      | Exact date or date range                            |
+| `Month`        | String    | No       | `May`             | Month of travel                                     |
+| `City`         | String    | Yes      | `Kyoto`           | City visited                                        |
+| `County_State` | String    | No       | `Kansai`          | County, Province, or State                          |
+| `Country`      | String    | Yes      | `Japan`           | Country name                                        |
+| `Latitude`     | Float     | Optional | `35.0116`         | Decimal latitude (-90.0 to 90.0)                    |
+| `Longitude`    | Float     | Optional | `135.7681`        | Decimal longitude (-180.0 to 180.0)                 |
 | `Notes`        | String    | No       | `Visited Fushimi` | Optional trip notes, activities, or recommendations |
 
 ---

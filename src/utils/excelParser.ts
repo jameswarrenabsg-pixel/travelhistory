@@ -21,68 +21,71 @@ export const parseTravelSpreadsheet = (file: File): Promise<TravelLocation[]> =>
           throw new Error('The spreadsheet appears to be empty.');
         }
 
-        const rawLocations = jsonRows
-          .map((row, index) => {
-            // Flexible key lookup
-            const getVal = (possibleKeys: string[]): string => {
-              for (const key of possibleKeys) {
-                const foundKey = Object.keys(row).find(
-                  (k) => k.trim().toLowerCase() === key.toLowerCase()
-                );
-                if (foundKey && row[foundKey] !== undefined && row[foundKey] !== '') {
-                  return String(row[foundKey]).trim();
-                }
+        const rawLocations = jsonRows.map((row, index) => {
+          // Flexible key lookup
+          const getVal = (possibleKeys: string[]): string => {
+            for (const key of possibleKeys) {
+              const foundKey = Object.keys(row).find(
+                (k) => k.trim().toLowerCase() === key.toLowerCase(),
+              );
+              if (foundKey && row[foundKey] !== undefined && row[foundKey] !== '') {
+                return String(row[foundKey]).trim();
               }
-              return '';
-            };
-
-            const yearStr = getVal(['year', 'yr']);
-            const yearNum = parseInt(yearStr, 10);
-
-            const city = getVal(['city', 'town', 'location']);
-            const country = getVal(['country', 'nation']);
-            const countyState = getVal(['county_state', 'state', 'county', 'province', 'region']);
-            const month = getVal(['month']);
-            const date = getVal(['date']);
-            const notes = getVal(['notes', 'note', 'details', 'description', 'comments']);
-
-            const latStr = getVal(['latitude', 'lat']);
-            const lngStr = getVal(['longitude', 'lng', 'lon', 'long']);
-
-            const latitude = parseFloat(latStr);
-            const longitude = parseFloat(lngStr);
-
-            if (isNaN(yearNum) || (!city && !country)) {
-              return null;
             }
+            return '';
+          };
 
-            const item: TravelLocation = {
-              id: `upload-${index}-${Date.now()}`,
-              year: yearNum,
-              city: city || 'Unknown City',
-              countyState: countyState || undefined,
-              country: country || 'Unknown Country',
-              month: month || undefined,
-              date: date || undefined,
-              notes: notes || undefined,
-              latitude: isNaN(latitude) ? 0 : latitude,
-              longitude: isNaN(longitude) ? 0 : longitude,
-            };
-            return item;
-          });
+          const yearStr = getVal(['year', 'yr']);
+          const yearNum = parseInt(yearStr, 10);
+
+          const city = getVal(['city', 'town', 'location']);
+          const country = getVal(['country', 'nation']);
+          const countyState = getVal(['county_state', 'state', 'county', 'province', 'region']);
+          const month = getVal(['month']);
+          const date = getVal(['date']);
+          const notes = getVal(['notes', 'note', 'details', 'description', 'comments']);
+
+          const latStr = getVal(['latitude', 'lat']);
+          const lngStr = getVal(['longitude', 'lng', 'lon', 'long']);
+
+          const latitude = parseFloat(latStr);
+          const longitude = parseFloat(lngStr);
+
+          if (isNaN(yearNum) || (!city && !country)) {
+            return null;
+          }
+
+          const item: TravelLocation = {
+            id: `upload-${index}-${Date.now()}`,
+            year: yearNum,
+            city: city || 'Unknown City',
+            countyState: countyState || undefined,
+            country: country || 'Unknown Country',
+            month: month || undefined,
+            date: date || undefined,
+            notes: notes || undefined,
+            latitude: isNaN(latitude) ? 0 : latitude,
+            longitude: isNaN(longitude) ? 0 : longitude,
+          };
+          return item;
+        });
 
         const parsedLocations: TravelLocation[] = rawLocations.filter(
-          (loc): loc is TravelLocation => loc !== null
+          (loc): loc is TravelLocation => loc !== null,
         );
 
         if (parsedLocations.length === 0) {
-          throw new Error('No valid travel entries found in spreadsheet. Check required columns (Year, City, Country).');
+          throw new Error(
+            'No valid travel entries found in spreadsheet. Check required columns (Year, City, Country).',
+          );
         }
 
         resolve(parsedLocations);
       } catch (err: unknown) {
         const error = err as Error;
-        reject(new Error(error.message || 'Failed to parse file. Please verify CSV or Excel layout.'));
+        reject(
+          new Error(error.message || 'Failed to parse file. Please verify CSV or Excel layout.'),
+        );
       }
     };
 

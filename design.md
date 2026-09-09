@@ -62,13 +62,16 @@ App
 ## 4. Key Implementation Mechanisms
 
 ### A. Dynamic Year Filtering
+
 When a user clicks a year button (e.g. `2024`):
+
 1. `selectedYear` state updates to `2024`.
 2. `filteredLocations = locations.filter(loc => loc.year === 2024)`.
 3. React-Leaflet re-renders markers.
 4. `useMap()` recalculates bounds based on `filteredLocations` coordinates and triggers smooth pan/zoom.
 
 ### B. Client-side Excel File Processing
+
 1. User drops or selects `.xlsx` / `.csv` file via `<input type="file">`.
 2. FileReader reads array buffer.
 3. SheetJS (`xlsx.read`) parses worksheet into JSON rows.

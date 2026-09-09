@@ -113,7 +113,10 @@ export const FileUploadModal: React.FC<FileUploadModalProps> = ({
             {loading ? 'Parsing file...' : 'Click to browse or drag & drop file'}
           </p>
           <p className="text-xs text-slate-400 mb-3">
-            Expected columns: <span className="font-mono text-slate-600">Year, City, Country, County_State, Month, Latitude, Longitude, Notes</span>
+            Expected columns:{' '}
+            <span className="font-mono text-slate-600">
+              Year, City, Country, County_State, Month, Latitude, Longitude, Notes
+            </span>
           </p>
         </div>
 
@@ -132,7 +135,13 @@ export const FileUploadModal: React.FC<FileUploadModalProps> = ({
         )}
 
         <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-          <span>You can use <code className="bg-slate-100 px-1.5 py-0.5 rounded text-slate-700 font-mono">travel_history.csv</code> from this project folder.</span>
+          <span>
+            You can use{' '}
+            <code className="bg-slate-100 px-1.5 py-0.5 rounded text-slate-700 font-mono">
+              travel_history.csv
+            </code>{' '}
+            from this project folder.
+          </span>
           <button
             onClick={onClose}
             className="px-3 py-1.5 font-medium text-slate-600 hover:text-slate-800"

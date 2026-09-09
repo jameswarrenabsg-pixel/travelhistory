@@ -33,9 +33,7 @@ export const MapView: React.FC<MapViewProps> = ({ locations }) => {
   const defaultCenter: [number, number] = [20, 0];
   const defaultZoom = 2;
 
-  const validLocations = locations.filter(
-    (loc) => loc.latitude !== 0 || loc.longitude !== 0
-  );
+  const validLocations = locations.filter((loc) => loc.latitude !== 0 || loc.longitude !== 0);
 
   return (
     <div className="relative w-full h-[520px] sm:h-[620px] bg-slate-100 rounded-xl overflow-hidden border border-slate-200 shadow-sm">
@@ -44,9 +42,12 @@ export const MapView: React.FC<MapViewProps> = ({ locations }) => {
           <div className="p-4 bg-sky-50 text-sky-600 rounded-full mb-3">
             <Compass className="w-10 h-10 animate-pulse" />
           </div>
-          <h3 className="text-base font-bold text-slate-800 mb-1">No Travel Records For This Selection</h3>
+          <h3 className="text-base font-bold text-slate-800 mb-1">
+            No Travel Records For This Selection
+          </h3>
           <p className="text-xs text-slate-500 max-w-sm">
-            Select another year tab above or upload an Excel / CSV file containing travel details for this year.
+            Select another year tab above or upload an Excel / CSV file containing travel details
+            for this year.
           </p>
         </div>
       ) : null}
@@ -65,11 +66,7 @@ export const MapView: React.FC<MapViewProps> = ({ locations }) => {
         <MapBoundsAutoFitter locations={validLocations} />
 
         {validLocations.map((loc) => (
-          <Marker
-            key={loc.id}
-            position={[loc.latitude, loc.longitude]}
-            icon={customIcon}
-          >
+          <Marker key={loc.id} position={[loc.latitude, loc.longitude]} icon={customIcon}>
             <Popup className="travel-popup">
               <div className="p-1 max-w-xs">
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-sky-600 uppercase tracking-wider mb-1">
@@ -85,11 +82,7 @@ export const MapView: React.FC<MapViewProps> = ({ locations }) => {
                 {(loc.month || loc.date || loc.year) && (
                   <div className="flex items-center gap-1 text-xs text-slate-500 mb-2">
                     <Calendar className="w-3 h-3 text-slate-400" />
-                    <span>
-                      {loc.date
-                        ? loc.date
-                        : `${loc.month || ''} ${loc.year}`}
-                    </span>
+                    <span>{loc.date ? loc.date : `${loc.month || ''} ${loc.year}`}</span>
                   </div>
                 )}
 

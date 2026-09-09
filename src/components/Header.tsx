@@ -26,7 +26,9 @@ export const Header: React.FC<HeaderProps> = ({
                 2016 – 2026
               </span>
             </h1>
-            <p className="text-xs text-slate-400">Interactive geographical visualization of travels</p>
+            <p className="text-xs text-slate-400">
+              Interactive geographical visualization of travels
+            </p>
           </div>
         </div>
 

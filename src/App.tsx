@@ -73,10 +73,7 @@ export function App() {
 
       <div className="bg-slate-100 flex-1 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-4">
-          <TravelStats
-            selectedYear={selectedYear}
-            locations={filteredLocations}
-          />
+          <TravelStats selectedYear={selectedYear} locations={filteredLocations} />
 
           <MapView locations={filteredLocations} />
 
