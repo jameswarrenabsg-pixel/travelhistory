@@ -47,9 +47,15 @@ export const parseTravelSpreadsheet = (file: File): Promise<TravelLocation[]> =>
 
           const latStr = getVal(['latitude', 'lat']);
           const lngStr = getVal(['longitude', 'lng', 'lon', 'long']);
+          const photoCountStr = getVal(['photos', 'photo_count', 'photo count']);
 
           const latitude = parseFloat(latStr);
           const longitude = parseFloat(lngStr);
+          const photoCountFromColumn = parseInt(photoCountStr, 10);
+          const photoCountFromNotes = parseInt(
+            notes.match(/(?:^|;\s*)?[^;]*?(\d+)\s+photos?/i)?.[1] || '',
+            10,
+          );
 
           if (isNaN(yearNum) || (!city && !country)) {
             return null;
@@ -66,6 +72,11 @@ export const parseTravelSpreadsheet = (file: File): Promise<TravelLocation[]> =>
             notes: notes || undefined,
             latitude: isNaN(latitude) ? 0 : latitude,
             longitude: isNaN(longitude) ? 0 : longitude,
+            photoCount: Number.isFinite(photoCountFromColumn)
+              ? photoCountFromColumn
+              : Number.isFinite(photoCountFromNotes)
+                ? photoCountFromNotes
+                : undefined,
           };
           return item;
         });

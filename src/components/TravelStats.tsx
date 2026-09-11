@@ -22,7 +22,7 @@ export const TravelStats: React.FC<TravelStatsProps> = ({ selectedYear, location
           <div>
             <h2 className="text-sm font-bold text-slate-800">
               {selectedYear === 'ALL'
-                ? 'Overall Travel History (2016 - 2026)'
+                ? 'Overall Travel History'
                 : `Travel Destinations in ${selectedYear}`}
             </h2>
             <p className="text-xs text-slate-500">

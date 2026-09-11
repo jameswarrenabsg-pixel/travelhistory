@@ -8,6 +8,7 @@ export interface TravelLocation {
   country: string;
   latitude: number;
   longitude: number;
+  photoCount?: number;
   notes?: string;
 }
 

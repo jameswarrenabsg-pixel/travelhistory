@@ -5,13 +5,18 @@ interface HeaderProps {
   onOpenUploadModal: () => void;
   onResetData: () => void;
   isUsingSampleData: boolean;
+  availableYears: number[];
 }
 
 export const Header: React.FC<HeaderProps> = ({
   onOpenUploadModal,
   onResetData,
   isUsingSampleData,
+  availableYears,
 }) => {
+  const firstYear = availableYears.length > 0 ? Math.min(...availableYears) : null;
+  const lastYear = availableYears.length > 0 ? Math.max(...availableYears) : null;
+
   return (
     <header className="bg-slate-900 text-white shadow-md border-b border-slate-800 sticky top-0 z-30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-3">
@@ -22,9 +27,11 @@ export const Header: React.FC<HeaderProps> = ({
           <div>
             <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
               My Travel History
-              <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
-                2016 – 2026
-              </span>
+              {firstYear !== null && lastYear !== null && (
+                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                  {firstYear} – {lastYear}
+                </span>
+              )}
             </h1>
             <p className="text-xs text-slate-400">
               Interactive geographical visualization of travels

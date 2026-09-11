@@ -16,7 +16,9 @@ export function App() {
 
   // Extract unique available years from loaded location data
   const availableYears = useMemo(() => {
-    const yearsSet = new Set(locations.map((loc) => loc.year));
+    const yearsSet = new Set(
+      locations.filter((loc) => (loc.photoCount ?? 0) > 0).map((loc) => loc.year),
+    );
     return Array.from(yearsSet).sort((a, b) => b - a);
   }, [locations]);
 
@@ -31,9 +33,9 @@ export function App() {
   // Count helper for year buttons
   const getLocationCountByYear = (year: SelectedYearType) => {
     if (year === 'ALL') {
-      return locations.length;
+      return locations.filter((loc) => (loc.photoCount ?? 0) > 0).length;
     }
-    return locations.filter((loc) => loc.year === year).length;
+    return locations.filter((loc) => loc.year === year && (loc.photoCount ?? 0) > 0).length;
   };
 
   const handleDataLoaded = (newLocations: TravelLocation[]) => {
@@ -62,6 +64,7 @@ export function App() {
         onOpenUploadModal={() => setIsUploadModalOpen(true)}
         onResetData={handleResetData}
         isUsingSampleData={isUsingSampleData}
+        availableYears={availableYears}
       />
 
       <YearSelector
